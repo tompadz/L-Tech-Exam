@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">ltechtest</string>
+
+
+
+    <string name="auth_hint_phone">Введите номер телефона</string>
+    <string name="auth_hint_password">Введите пароль</string>
+    <string name="auth_title">Вход в аккаунт</string>
+    <string name="auth_title_phone">Телефон</string>
+    <string name="auth_title_password">Пароль</string>
+    <string name="auth_button_login">Войти</string>
+
+    <string name="title">Лента новостей</string>
+    <string name="title_sort">Сортировка</string>
+
+    <string name="menu_home_refresh">Обновить</string>
+
+    <string name="sort_default">По умолчанию</string>
+    <string name="sort_date">По дате</string>
+    <string name="menu_sheet_close">Закрыть</string>
+</resources>
