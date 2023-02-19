@@ -46,7 +46,10 @@ class HomeViewModel(
     private fun getPosts() {
         viewModelScope.launch {
             when(val result = repository.getPosts()) {
-                is ResponseResult.Error -> _error.value = result.error
+                is ResponseResult.Error -> {
+                    _error.value = result.error
+                    stopLongPooling()
+                }
                 is ResponseResult.Success -> {
                     _posts.value = when (sortType) {
                         SortType.DATE -> result.value.sortedBy { it.getDateLong() }

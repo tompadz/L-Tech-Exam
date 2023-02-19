@@ -5,13 +5,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentManager
 import com.dapadz.ltechtest.R
 import com.dapadz.ltechtest.databinding.SheetSortBinding
 import com.dapadz.ltechtest.utils.SortType
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 
 class SheetSort(
-    private val currentSortType : SortType,
     private val listener : OnSheetSortClickListener,
 ) : BottomSheetDialogFragment() {
 
@@ -22,6 +22,7 @@ class SheetSort(
     private var _binding : SheetSortBinding? = null
     private val binding get() = _binding !!
 
+    private var currentSortType = SortType.DEFAULT
     private var sortType = currentSortType
 
     override fun onCreateView(
@@ -66,6 +67,11 @@ class SheetSort(
                 }
             }
         }
+    }
+
+    fun show(currentSortType : SortType, fm : FragmentManager, tag : String?) {
+        this.currentSortType = currentSortType
+        super.show(fm, tag)
     }
 
     override fun onDismiss(dialog : DialogInterface) {

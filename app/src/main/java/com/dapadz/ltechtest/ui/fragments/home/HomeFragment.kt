@@ -69,7 +69,7 @@ class HomeFragment : Fragment(),
     }
 
     private fun initBottomSheet() {
-        filterSheet = SheetSort(viewModel.sortType,this)
+        filterSheet = SheetSort(this)
     }
 
     private fun initAdapter() {
@@ -144,7 +144,7 @@ class HomeFragment : Fragment(),
 
     override fun onFilterClick() {
         if (! filterSheet.isResumed) {
-            filterSheet.show(parentFragmentManager, SheetSort.TAG)
+            filterSheet.show(viewModel.sortType, parentFragmentManager, SheetSort.TAG)
         }
     }
 
